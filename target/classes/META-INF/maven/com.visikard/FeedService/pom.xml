@@ -23,7 +23,14 @@
 
 
 	<dependencies>
-	
+
+		<!-- connection pool -->
+		<dependency>
+			<groupId>commons-pool</groupId>
+			<artifactId>commons-pool</artifactId>
+			<version>1.5.4</version>
+		</dependency>
+
 		<!-- kyoto tycoon -->
 		<dependency>
 			<groupId>kt4j</groupId>
@@ -41,7 +48,7 @@
 			<artifactId>jackson-mapper-asl</artifactId>
 			<version>${json.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>commons-logging</groupId>
 			<artifactId>commons-logging</artifactId>
@@ -62,13 +69,13 @@
 			<artifactId>commons-lang3</artifactId>
 			<version>3.0</version>
 		</dependency>
-		
+
 		<!-- log4j -->
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 			<version>${log4j.version}</version>
-		
+
 		</dependency>
 
 		<!-- Test -->
