@@ -47,16 +47,8 @@ public class KyotoConnectionFactory implements PoolableObjectFactory {
 	}
 
 	public boolean validateObject(Object arg0) {
-		KyotoTycoonClient conn = (KyotoTycoonClient)arg0;
-		boolean isValid = true;
-		try {
-			
-			
-		} catch(Exception ex) {
-			isValid = false;
-			logger.error("Object invalidated :" +ex);
-		}
-		return isValid;
+		logger.info("Kyoto validateObject Object");
+		return true;
 	}
 
 }

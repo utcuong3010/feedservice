@@ -24,13 +24,13 @@ public class InsertSocialFeedServiceTest {
 	
 	public void insertFeed() {
 		
-		int num = 200;
+		int num = 100;
 		for(int i =0 ;i<num;i++) {
-			final int t = i;
-		
-			 Thread thread = new Thread() {
-				@Override
-				public void run() {
+			final int t = 1;
+//		
+//			 Thread thread = new Thread() {
+//				@Override
+//				public void run() {
 					//for(int j =0 ;j<100 ;j++) {
 					SocialFeedService feedService = new SocialFeedServiceImpl();
 					
@@ -38,7 +38,7 @@ public class InsertSocialFeedServiceTest {
 					Date start = new Date();
 					//test function below
 					SocialFeedInfo feedInfo = new SocialFeedInfo();
-					feedInfo.setContent("wrong this is mad" + t);
+					feedInfo.setContent("wrong this is mad" + i);
 					feedInfo.setType(SocialFeedType.TEXT);
 					
 					//friend kards
@@ -57,11 +57,11 @@ public class InsertSocialFeedServiceTest {
 					
 					
 				};
-			};
-			
-			thread.start();
-		}
-		
+//			};
+//			
+//			thread.start();
+//		}
+//		
 		
 		
 		

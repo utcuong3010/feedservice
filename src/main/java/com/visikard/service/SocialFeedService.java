@@ -16,6 +16,6 @@ import com.visikard.dto.SocialFeedInfo;
 public interface SocialFeedService {
 	
 	public boolean addFeed(long kardId,SocialFeedInfo feedInfo,Set<Long> friendIds);
-	public List<SocialFeedInfo>getAllFeeds(long kardId);
+	public List<SocialFeedInfo>getFeeds(long kardId, int from, int num);
 
 }

@@ -5,7 +5,7 @@
 	<artifactId>FeedService</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<description>Feed all messages including social feed,notification feed,event feed,earn money feed</description>
-
+	<packaging>jar</packaging>
 
 	<properties>
 		<junit.version>4.8.1</junit.version>
@@ -86,4 +86,59 @@
 		</dependency>
 
 	</dependencies>
+
+	<build>
+
+		<finalName>${project.artifactId}</finalName>
+		<plugins>
+			<!-- Compile java -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+			<!-- packing jar file -->
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<classpathPrefix>dependency-jars/</classpathPrefix>
+
+						</manifest>
+					</archive>
+
+				</configuration>
+
+			</plugin>
+			<!-- package for dependency -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>2.5.1</version>
+				<executions>
+					<execution>
+						<id>copy-dependencies</id>
+						<phase>package</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${project.build.directory}/dependency-jars/</outputDirectory>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+
 </project>
